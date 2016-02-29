@@ -1,11 +1,8 @@
 ---
 layout: default
-title: Title of first post
+title: hello word
 ---
 
-# Hello
+Hello :)
 
-## Is it me you're looking for ?
-
-* Yes
-* No
+This blog is mainly dedicated to publish code snippets, tricks, or interesting coding things. Maybe some personal stuff, but not too much!

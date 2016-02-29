@@ -51,21 +51,22 @@ table {
 /* - - - - - - - - - - - - - - */
 
 html{
-	height:100%;
 	background:#FFFFFF;
 }
 
 body{
 	background: #FAFAFA;
 	width:1200px;
-	height:100%;
+	min-height:100%;
 	margin:auto;
 	box-shadow: -3px 0px 3px -3px #DDD, 3px 0px 3px -3px #DDD;
 	font-family: 'Josefin Sans', sans-serif;
+	color:#424548;
 }
 
 header{
 	background: #FAFAFA;
+	overflow: auto;
 }
 
 header #logo{
@@ -88,3 +89,61 @@ header h1{
 	line-height: 156px;
 	font-family: 'Bubbler One', sans-serif;
 }
+
+#content{
+	overflow: auto;
+}
+
+aside{
+	width:400px;
+	box-sizing: border-box;
+	float:left;
+	padding:0 20px;
+}
+section{
+	width:800px;
+	box-sizing: border-box;
+	float:right;
+	padding:0 20px;
+}
+
+h2{
+	font-size: 30px;
+	text-align: center;
+	font-weight: 400;
+	padding: 20px 10px;
+}
+
+h3{
+	font-size: 22px;
+	font-weight: 400;
+	padding: 20px 10px;
+}
+
+
+ul li{
+	font-size: 18px;
+	padding: 10px 20px;
+}
+
+a{
+	text-decoration: none;
+	color:#8D8F91;
+}
+a:hover{
+	color:#424548;
+}
+
+p{
+	font-size: 18px;
+	padding:10px;
+}
+
+hr{
+	margin: 20px 50px;
+}
+
+#about{
+	margin-bottom: 40px;
+}
+
