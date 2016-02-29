@@ -3,14 +3,26 @@ layout: default
 title: Homepage
 ---
 
-  <h1>Welcome to massimo's website</h1>
+	<div id="about">
+		{% capture my_about %}{% include about.md %}{% endcapture %}
+		{{ my_about | markdownify }}
+	</div>
 
-  <div id="articles">
-  	<ul>
-	  {% for post in site.posts %}
-	    <li>
-	      <a href="{{ post.url }}">{{ post.title }}</a>
-	    </li>
-	  {% endfor %}
-	</ul>
-  </div>
+	<div id="projects">
+		{% capture my_projects %}{% include projects.md %}{% endcapture %}
+		{{ my_projects | markdownify }}
+	</div>
+
+	<div id="links">
+		{% include links.html %}
+	</div>
+
+	<div id="blog">
+		<ul>
+		{% for post in site.posts %}
+			<li>
+			  	<a href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>

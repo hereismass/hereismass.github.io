@@ -50,19 +50,22 @@ table {
 
 /* - - - - - - - - - - - - - - */
 
-body{
-	background: #FFF;
-	width:100%;
+html{
 	height:100%;
+	background:#FFFFFF;
+}
+
+body{
+	background: #FAFAFA;
+	width:1200px;
+	height:100%;
+	margin:auto;
+	box-shadow: -3px 0px 3px -3px #DDD, 3px 0px 3px -3px #DDD;
 	font-family: 'Josefin Sans', sans-serif;
 }
 
 header{
-	width:1200px;
-	margin: auto;
-	background: blue;
-	position: relative;
-	overflow:auto;
+	background: #FAFAFA;
 }
 
 header #logo{
@@ -72,6 +75,7 @@ header #logo{
     border: 3px solid white;
     border-radius: 75px;
     height: 150px;
+
 }
 
 header h1{
