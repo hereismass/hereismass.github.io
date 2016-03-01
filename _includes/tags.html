@@ -1,6 +1,7 @@
 <h2>Blog subjects</h2>
 
 <ul>
+	<li><a href="/blog.html">All ({{site.posts | size}})</a></li>
 	{% for tag in site.tags %}
 		{% assign t = tag | first %}
 		{% assign posts = tag | last %}
