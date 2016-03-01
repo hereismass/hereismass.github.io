@@ -147,3 +147,6 @@ hr{
 	margin-bottom: 40px;
 }
 
+#tags ul li{
+	text-transform: capitalize;
+}
