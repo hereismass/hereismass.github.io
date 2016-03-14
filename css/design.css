@@ -102,17 +102,17 @@ header nav a{
 
 #content{
 	overflow: auto;
-	padding-bottom: 50px;
+	padding: 0 50px 50px 50px;
 }
 
 aside{
-	width:400px;
+	width:350px;
 	box-sizing: border-box;
 	float:left;
 	padding:0 20px;
 }
 section{
-	width:800px;
+	width:750px;
 	box-sizing: border-box;
 	float:right;
 	padding:0 20px;
@@ -132,10 +132,17 @@ h3{
 	padding: 20px 10px;
 }
 
+aside > div{
+	margin: 20px 0;
+	background: #F8F8F8;
+	border-radius: 10px;
+	padding:20px;
+}
+
 
 ul li{
 	font-size: 18px;
-	padding: 10px 20px;
+	padding: 10px;
 }
 
 a{
@@ -169,3 +176,26 @@ hr{
 	font-size: 18px;
 	padding: 10px;
 }
+
+.fa-facebook{
+
+}
+.fa-flickr{
+
+}
+.fa-twitch{
+
+}
+.fa-linkedin{
+
+}
+.fa-twitter{
+
+}
+.fa-github{
+
+}
+.fa-file-text-o{
+	
+}
+
