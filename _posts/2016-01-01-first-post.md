@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blogpost
 title: hello word
 tags: misc
 ---
