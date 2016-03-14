@@ -51,11 +51,12 @@ table {
 /* - - - - - - - - - - - - - - */
 
 html{
-	background:#FFFFFF;
+	background: #FAFAFA;
+	
 }
 
 body{
-	background: #FAFAFA;
+	background:#FFFFFF;
 	width:1200px;
 	min-height:100%;
 	margin:auto;
@@ -65,7 +66,7 @@ body{
 }
 
 header{
-	background: #FAFAFA;
+	background:#FFFFFF;
 	overflow: auto;
 }
 
@@ -85,10 +86,19 @@ header h1{
 	font-weight: 700;
 	font-size: 120px;
 	letter-spacing: 6px;
-	margin: 25px;
-	line-height: 156px;
+	margin: 45px 25px 0 0;
 	font-family: 'Bubbler One', sans-serif;
 }
+
+header nav{
+	float: right;
+	margin: 5px 25px;
+}
+header nav a{
+	margin-left: 20px;
+	font-size: 22px;
+}
+
 
 #content{
 	overflow: auto;
