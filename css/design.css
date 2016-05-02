@@ -61,7 +61,7 @@ body{
 	min-height:100%;
 	margin:auto;
 	box-shadow: -3px 0px 3px -3px #DDD, 3px 0px 3px -3px #DDD;
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: Helvetica, sans-serif;
 	color:#424548;
 }
 
@@ -132,11 +132,16 @@ h3{
 	padding: 20px 10px;
 }
 
-aside > div{
+aside > div, #stream{
 	margin: 20px 0;
-	background: #F8F8F8;
+	background: #F3F3F3;
 	border-radius: 10px;
+	padding:0 20px 20px 20px;
+}
+
+#stream{
 	padding:20px;
+	position: relative;
 }
 
 
@@ -156,11 +161,23 @@ a:hover{
 p{
 	font-size: 18px;
 	padding:10px;
+	line-height: 1.2;
 }
 
-hr{
-	margin: 20px 50px;
+#stream-info{
+	position: absolute;
+	bottom:20px;
+	right:20px;
 }
+#stream-info span{
+	padding:0;
+}
+#stream h3{
+	display: none;
+	padding-bottom: 0;
+}
+
+
 
 #about{
 	margin-bottom: 40px;

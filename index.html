@@ -7,9 +7,15 @@ title: Homepage
 	{{ my_about | markdownify }}
 </div>
 
-<div id="projects">
-	{% capture my_projects %}{% include projects.md %}{% endcapture %}
-	{{ my_projects | markdownify }}
+<div id="stream">
+	<iframe src="https://player.twitch.tv/?channel=hereismass" frameborder="0" scrolling="no" height="408" width="670"></iframe>
+	<h3></h3>
+	<div id="stream-info">
+		<span id="viewers"></span>
+		<span id="followers"></span>
+	</div>
+	
+	
 </div>
 
 <div id="lastposts">
@@ -23,3 +29,20 @@ title: Homepage
 	</ul>
 	<a href="/blog.html" id="seemore">See more</a>
 </div>
+
+
+<script type="text/javascript">
+	$.getJSON( "https://api.twitch.tv/kraken/streams/hereismass?callback=?", function(response) {
+	  if (response.stream){
+	  	//if stream online
+	    $('#viewers').html('<i class="fa fa-eye fa-fw"></i>' + response.stream.viewers);
+	    $('#followers').html('<i class="fa fa-heart fa-fw"></i>' + response.stream.channel.followers);
+	    $('#stream h3').text(response.stream.channel.status);
+	    $('#stream h3').show();
+	    console.log(JSON.stringify(response.stream));
+	  }else{
+	  	//if stream offline
+	    
+	  }
+	});
+</script>
