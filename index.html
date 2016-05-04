@@ -8,8 +8,7 @@ title: Homepage
 </div>
 
 <div id="stream">
-	
-	<div id="stream-player"></div>
+	<iframe src="https://player.twitch.tv/?channel=hereismass" frameborder="0" scrolling="no" height="408" width="670"></iframe>
 	<h3></h3>
 	<div id="stream-info">
 		<span id="viewers"></span>
@@ -31,18 +30,9 @@ title: Homepage
 	<a href="/blog.html" id="seemore">See more</a>
 </div>
 
-<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
-<script type="text/javascript">
-	var options = {
-        width: 670,
-        height: 408,
-        channel: "hereismass"
-        //video: "{VIDEO_ID}"       
-    };
-    var player = new Twitch.Player("stream-player", options);
 
-    player.setVolume(0.5);
-	$.getJSON( "http://api.twitch.tv/kraken/streams/hereismass?callback=?", function(response) {
+<script type="text/javascript">
+	$.getJSON( "https://api.twitch.tv/kraken/streams/hereismass?callback=?", function(response) {
 	  if (response.stream){
 	  	//if stream online
 	    $('#viewers').html('<i class="fa fa-eye fa-fw"></i>' + response.stream.viewers);
