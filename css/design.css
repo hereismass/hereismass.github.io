@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -52,7 +52,7 @@ table {
 
 html{
 	background: #FAFAFA;
-	
+
 }
 
 body{
@@ -200,7 +200,6 @@ p{
 }
 
 
-
 #about{
 	margin-bottom: 40px;
 }
@@ -238,3 +237,19 @@ p{
 
 }
 
+.highlighter-rouge, figure.highlight{
+	font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+	background-color: #F3F3F3;
+}
+
+.highlighter-rouge{
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+figure.highlight{
+	border-radius: 10px;
+	padding:20px;
+	margin:10px 0;
+}
+}

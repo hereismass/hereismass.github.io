@@ -1,6 +1,6 @@
 ---
 layout: blogpost
-title: hello word
+title: Hello Word
 tags: misc
 ---
 
