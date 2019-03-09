@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/hereismass/hereismass.github.io#readme",
   "devDependencies": {
-    "gulp": "^4.0.0"
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0"
   }
 }
