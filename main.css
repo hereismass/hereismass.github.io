@@ -166,6 +166,7 @@ a:hover {
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
+  font-size: 2vw;
 }
 
 header {
@@ -313,6 +314,9 @@ section article:nth-child(4n+4):before {
   body {
     font-size: 1.5vw;
   }
+  #scrolldown {
+    font-size: 2vw;
+  }
   header h1 {
     font-size: 4vw;
   }
@@ -347,6 +351,9 @@ section article:nth-child(4n+4):before {
 @media screen and (max-width: 1280px) {
   body {
     font-size: 2vw;
+  }
+  #scrolldown {
+    font-size: 3vw;
   }
   header h1 {
     font-size: 6vw;
@@ -383,11 +390,14 @@ section article:nth-child(4n+4):before {
   body {
     font-size: 2vw;
   }
+  #scrolldown {
+    font-size: 4vw;
+  }
   header h1 {
     font-size: 7vw;
   }
   header #socials {
-    margin: 2vw;
+    margin: 5vw;
     font-size: 5vw;
   }
   section article {
@@ -416,27 +426,30 @@ section article:nth-child(4n+4):before {
 
 @media screen and (max-width: 480px) {
   body {
-    font-size: 2vw;
+    font-size: 4vw;
+  }
+  #scrolldown {
+    font-size: 8vw;
   }
   header h1 {
-    font-size: 7vw;
+    font-size: 8vw;
   }
   header #socials {
-    margin: 2vw;
-    font-size: 5vw;
+    margin: 10vw;
+    font-size: 8vw;
   }
   section article {
-    padding: 5vw 5vw 10vw 5vw;
+    padding: 10vw 5vw 15vw 5vw;
   }
   section article:before {
-    height: 5vw;
-    top: -5vw;
+    height: 8vw;
+    top: -8vw;
   }
   section article:last-child {
-    padding-bottom: 5vw;
+    padding-bottom: 8vw;
   }
   section article .article-content h3 {
-    font-size: 3vw;
+    font-size: 5vw;
     padding-bottom: 3vw;
     margin-bottom: 3vw;
   }
@@ -446,5 +459,11 @@ section article:nth-child(4n+4):before {
   section article .article-image {
     width: 20vw;
     height: 20vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section article .article-image {
+    display: none;
   }
 }
