@@ -1,0 +1,83 @@
+// variables
+
+$sizes: (
+  largest: (
+    fs-big: 4vw,
+    fs-title: 2vw,
+    fs-normal: 1.5vw,
+    fs-icons: 3vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 15vw 10vw 15vw,
+    a-sep: 5vw,
+    title-sep: 2vw,
+    image-width: 15vw,
+    image-height: 15vw
+  ),
+  large: (
+    fs-big: 4vw,
+    fs-title: 2vw,
+    fs-normal: 1.5vw,
+    fs-icons: 3vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 15vw 10vw 15vw,
+    a-sep: 5vw,
+    title-sep: 2vw,
+    image-width: 15vw,
+    image-height: 15vw
+  ),
+  normal:(
+    fs-big: 6vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 4vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 10vw 10vw 10vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  ),
+  tablet:(
+    fs-big: 7vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 5vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 10vw 10vw 10vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  ),
+  mobile: (
+    fs-big: 7vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 5vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 5vw 10vw 5vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  )
+);
+
+
+$fw-light: 300;
+$fw-normal: 400;
+$fw-bold: 700;
+
+
+// colors
+$text-color: #fff;
+$hover-color: #aaa;
+
+$bg-gradient-1: rgba(0, 56, 64, 0.90);
+$bg-gradient-2: rgba(0, 0, 0, 0.7);
+
+$border-color: rgba(255, 255, 255, 0.2);
+
+
+// articles background colors
+$bg-colors: #003840, #005A5B, #007369, #008C72;

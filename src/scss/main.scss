@@ -1,0 +1,256 @@
+@import 'reset';
+@import 'variables';
+@import 'breakpoints';
+
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+// functions
+@function url-friendly-color($color) {
+  @return '%23' + str-slice('#{$color}', 2, -1);
+}
+
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// base
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: linear-gradient(to top, $bg-gradient-1 , $bg-gradient-2),
+    url('images/background.jpg');
+  background-size: auto, cover;
+  background-attachment: fixed;
+  background-position: center;
+
+  color: $text-color;
+  font-family: 'Raleway', sans-serif;
+  font-weight: $fw-normal;
+  font-size: map-deep-get($sizes, 'largest', 'fs-normal');
+}
+
+a {
+  color: inherit;
+  outline: 0;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+#scrolldown {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+}
+
+// header
+header {
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-weight: $fw-bold;
+    font-size: map-deep-get($sizes, 'largest', 'fs-big');
+  }
+
+  #socials {
+    margin: map-deep-get($sizes, 'largest', 'socials-margin');
+    font-size: map-deep-get($sizes, 'largest', 'fs-icons');
+
+    a {
+      padding: 0 5px;
+    }
+  }
+}
+
+section {
+  article {
+    padding: map-deep-get($sizes, 'largest', 'a-padding');
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:before {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      display: block;
+      height: map-deep-get($sizes, 'largest', 'a-sep');
+      position: absolute;
+      top: -#{map-deep-get($sizes, 'largest', 'a-sep')};
+      left: 0;
+      width: 100%;
+    }
+
+    &:last-child {
+      padding-bottom: map-deep-get($sizes, 'largest', 'a-sep');
+    }
+
+    .article-content {
+      text-align: right;
+      width: 100%;
+
+      h3 {
+        text-transform: uppercase;
+        font-weight: $fw-bold;
+        font-size: map-deep-get($sizes, 'largest', 'fs-title');
+        letter-spacing: 0.1vw;
+        border-bottom: 2px solid $border-color;
+        padding-bottom: map-deep-get($sizes, 'largest', 'title-sep');
+        margin-bottom: map-deep-get($sizes, 'largest', 'title-sep');
+      }
+
+      p {
+        line-height: 2;
+        margin-bottom: map-deep-get($sizes, 'largest', 'title-sep');
+      }
+
+      a {
+        text-transform: uppercase;
+        font-weight: $fw-bold;
+        letter-spacing: 0.1vw;
+        
+
+        i {
+          padding-right: 0.5vw;
+        }
+      }
+
+      & + .article-image {
+        margin-left: 5vw;
+      }
+    }
+
+    .article-image {
+      flex-shrink: 0;
+      width: map-deep-get($sizes, 'largest', 'image-width');
+      height: map-deep-get($sizes, 'largest', 'image-height');
+      img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    &:nth-child(odd) {
+      .article-content {
+        text-align: left;
+        & + .article-image {
+          margin-left: 0;
+          margin-right: 5vw;
+        }
+      }
+      .article-image {
+        order: -1;
+      }
+    }
+  }
+
+  // bg-colors needs to have a even number of colors for this to work. 
+  // todo: make it works with odd list
+  @for $i from 1 through length($bg-colors) {
+    article:nth-child(#{length($bg-colors)}n+#{$i}) {
+      background: nth($bg-colors, $i);
+
+      @if $i % 2 == 0 {
+        &:before {
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E");
+        }
+      } @else {
+        &:before {
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E")
+        }
+      }
+    }
+  }
+}
+
+// breakpoints
+@include breakpoints((
+  large:      ( 1281px,  1680px ),
+  normal:    ( 737px,   1280px ),
+  tablet:    ( 481px,   736px  ),
+  mobile:   ( null,    480px  )
+));
+
+@each $name, $size in $breakpoints {
+  @include breakpoint('<=#{$name}') {
+    body {
+      font-size: map-deep-get($sizes, '#{$name}', 'fs-normal');
+    }
+  
+    header {
+      h1 {
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-big');
+      }
+  
+      #socials {
+        margin: map-deep-get($sizes, '#{$name}', 'socials-margin');
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-icons');
+      }
+    }
+  
+    section {
+      article {
+        padding: map-deep-get($sizes, '#{$name}', 'a-padding');
+  
+        &:before {
+          height: map-deep-get($sizes, '#{$name}', 'a-sep');
+          top: -#{map-deep-get($sizes, '#{$name}', 'a-sep')};
+        }
+  
+        &:last-child {
+          padding-bottom: map-deep-get($sizes, '#{$name}', 'a-sep');
+        }
+  
+        .article-content {
+          h3 {
+            font-size: map-deep-get($sizes, '#{$name}', 'fs-title');
+            padding-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+            margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+          }
+  
+          p {
+            margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+          }
+        }
+  
+        .article-image {
+          width: map-deep-get($sizes, '#{$name}', 'image-width');
+          height: map-deep-get($sizes, '#{$name}', 'image-height');
+        }
+      }
+    }
+  }
+}
+

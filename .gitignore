@@ -1,4 +1,4 @@
-
-Gemfile
-Gemfile.lock
-_site/
+# git ignore
+node_modules/*
+.DS_Store
+dist/
