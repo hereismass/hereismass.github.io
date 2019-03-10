@@ -1,4 +1,5 @@
 # hereismass.github.io
 
 ## Todo
-* everything
+* better responsive values
+* better gitignore
