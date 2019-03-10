@@ -1,11 +1,68 @@
 // variables
 
+$sizes: (
+  largest: (
+    fs-big: 4vw,
+    fs-title: 2vw,
+    fs-normal: 1.5vw,
+    fs-icons: 3vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 15vw 10vw 15vw,
+    a-sep: 5vw,
+    title-sep: 2vw,
+    image-width: 15vw,
+    image-height: 15vw
+  ),
+  large: (
+    fs-big: 4vw,
+    fs-title: 2vw,
+    fs-normal: 1.5vw,
+    fs-icons: 3vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 15vw 10vw 15vw,
+    a-sep: 5vw,
+    title-sep: 2vw,
+    image-width: 15vw,
+    image-height: 15vw
+  ),
+  normal:(
+    fs-big: 6vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 4vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 10vw 10vw 10vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  ),
+  tablet:(
+    fs-big: 7vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 5vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 10vw 10vw 10vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  ),
+  mobile: (
+    fs-big: 7vw,
+    fs-title: 3vw,
+    fs-normal: 2vw,
+    fs-icons: 5vw,
+    socials-margin: 2vw,
+    a-padding: 5vw 5vw 10vw 5vw,
+    a-sep: 5vw,
+    title-sep: 3vw,
+    image-width: 20vw,
+    image-height: 20vw
+  )
+);
 
-$fs-big: 3vw;
-$fs-title: 2vw;
-$fs-normal: 1.5vw;
-
-$fs-icons: 2vw;
 
 $fw-light: 300;
 $fw-normal: 400;

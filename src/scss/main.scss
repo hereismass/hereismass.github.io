@@ -7,7 +7,20 @@
 
 // functions
 @function url-friendly-color($color) {
-  @return '%23' + str-slice('#{$color}', 2, -1)
+  @return '%23' + str-slice('#{$color}', 2, -1);
+}
+
+/// Map deep get
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
 }
 
 // base
@@ -32,7 +45,7 @@ body {
   color: $text-color;
   font-family: 'Raleway', sans-serif;
   font-weight: $fw-normal;
-  font-size: $fs-normal;
+  font-size: map-deep-get($sizes, 'largest', 'fs-normal');
 }
 
 a {
@@ -65,12 +78,12 @@ header {
 
   h1 {
     font-weight: $fw-bold;
-    font-size: $fs-big;
+    font-size: map-deep-get($sizes, 'largest', 'fs-big');
   }
 
   #socials {
-    margin: 2vw;
-    font-size: $fs-icons;
+    margin: map-deep-get($sizes, 'largest', 'socials-margin');
+    font-size: map-deep-get($sizes, 'largest', 'fs-icons');
 
     a {
       padding: 0 5px;
@@ -80,8 +93,9 @@ header {
 
 section {
   article {
-    padding: 5vw 15vw 10vw 15vw;
+    padding: map-deep-get($sizes, 'largest', 'a-padding');
     display: flex;
+    align-items: center;
     position: relative;
 
     &:before {
@@ -89,15 +103,15 @@ section {
       background-size: 100% 100%;
       content: '';
       display: block;
-      height: 5vw;
+      height: map-deep-get($sizes, 'largest', 'a-sep');
       position: absolute;
-      top: -5vw;
+      top: -#{map-deep-get($sizes, 'largest', 'a-sep')};
       left: 0;
       width: 100%;
     }
 
     &:last-child {
-      padding-bottom: 5vw;
+      padding-bottom: map-deep-get($sizes, 'largest', 'a-sep');
     }
 
     .article-content {
@@ -107,16 +121,16 @@ section {
       h3 {
         text-transform: uppercase;
         font-weight: $fw-bold;
-        font-size: $fs-title;
+        font-size: map-deep-get($sizes, 'largest', 'fs-title');
         letter-spacing: 0.1vw;
         border-bottom: 2px solid $border-color;
-        padding-bottom: 2vw;
-        margin-bottom: 2vw;
+        padding-bottom: map-deep-get($sizes, 'largest', 'title-sep');
+        margin-bottom: map-deep-get($sizes, 'largest', 'title-sep');
       }
 
       p {
         line-height: 2;
-        margin-bottom: 2vw;
+        margin-bottom: map-deep-get($sizes, 'largest', 'title-sep');
       }
 
       a {
@@ -137,8 +151,8 @@ section {
 
     .article-image {
       flex-shrink: 0;
-      width: 15vw;
-      height: 15vw;
+      width: map-deep-get($sizes, 'largest', 'image-width');
+      height: map-deep-get($sizes, 'largest', 'image-height');
       img {
         border-radius: 50%;
         overflow: hidden;
@@ -180,3 +194,63 @@ section {
     }
   }
 }
+
+// breakpoints
+@include breakpoints((
+  large:      ( 1281px,  1680px ),
+  normal:    ( 737px,   1280px ),
+  tablet:    ( 481px,   736px  ),
+  mobile:   ( null,    480px  )
+));
+
+@each $name, $size in $breakpoints {
+  @include breakpoint('<=#{$name}') {
+    body {
+      font-size: map-deep-get($sizes, '#{$name}', 'fs-normal');
+    }
+  
+    header {
+      h1 {
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-big');
+      }
+  
+      #socials {
+        margin: map-deep-get($sizes, '#{$name}', 'socials-margin');
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-icons');
+      }
+    }
+  
+    section {
+      article {
+        padding: map-deep-get($sizes, '#{$name}', 'a-padding');
+  
+        &:before {
+          height: map-deep-get($sizes, '#{$name}', 'a-sep');
+          top: -#{map-deep-get($sizes, '#{$name}', 'a-sep')};
+        }
+  
+        &:last-child {
+          padding-bottom: map-deep-get($sizes, '#{$name}', 'a-sep');
+        }
+  
+        .article-content {
+          h3 {
+            font-size: map-deep-get($sizes, '#{$name}', 'fs-title');
+            padding-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+            margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+          }
+  
+          p {
+            margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+          }
+        }
+  
+        .article-image {
+          width: map-deep-get($sizes, '#{$name}', 'image-width');
+          height: map-deep-get($sizes, '#{$name}', 'image-height');
+        }
+      }
+    }
+  }
+}
+
