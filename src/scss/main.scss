@@ -5,10 +5,15 @@
 // fonts
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
 
-// base
+// functions
+@function url-friendly-color($color) {
+  @return '%23' + str-slice('#{$color}', 2, -1)
+}
 
+// base
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -18,7 +23,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),
+  background-image: linear-gradient(to top, $bg-gradient-1 , $bg-gradient-2),
     url('images/background.jpg');
   background-size: auto, cover;
   background-attachment: fixed;
@@ -27,19 +32,32 @@ body {
   color: $text-color;
   font-family: 'Raleway', sans-serif;
   font-weight: $fw-normal;
-  font-size: $font-size;
+  font-size: $fs-normal;
 }
 
 a {
   color: inherit;
   outline: 0;
   text-decoration: none;
+  transition: color .2s;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+#scrolldown {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10;
 }
 
 // header
 header {
   width: 100vw;
-  height: 90vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,12 +65,12 @@ header {
 
   h1 {
     font-weight: $fw-bold;
-    font-size: 3vw;
+    font-size: $fs-big;
   }
 
   #socials {
     margin: 2vw;
-    font-size: 2vw;
+    font-size: $fs-icons;
 
     a {
       padding: 0 5px;
@@ -61,33 +79,51 @@ header {
 }
 
 section {
-  background-color: rgba(46, 49, 65, 1);
   article {
-    padding: 5vw 15vw;
+    padding: 5vw 15vw 10vw 15vw;
     display: flex;
+    position: relative;
+
+    &:before {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      display: block;
+      height: 5vw;
+      position: absolute;
+      top: -5vw;
+      left: 0;
+      width: 100%;
+    }
+
+    &:last-child {
+      padding-bottom: 5vw;
+    }
 
     .article-content {
+      text-align: right;
       width: 100%;
+
       h3 {
         text-transform: uppercase;
         font-weight: $fw-bold;
-        font-size: 2vw;
+        font-size: $fs-title;
         letter-spacing: 0.1vw;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 2px solid $border-color;
         padding-bottom: 2vw;
         margin-bottom: 2vw;
       }
 
       p {
         line-height: 2;
+        margin-bottom: 2vw;
       }
 
       a {
-        display: block;
         text-transform: uppercase;
         font-weight: $fw-bold;
         letter-spacing: 0.1vw;
-        margin-top: 2vw;
+        
 
         i {
           padding-right: 0.5vw;
@@ -107,6 +143,39 @@ section {
         border-radius: 50%;
         overflow: hidden;
         width: 100%;
+      }
+    }
+
+    &:nth-child(odd) {
+      .article-content {
+        text-align: left;
+        & + .article-image {
+          margin-left: 0;
+          margin-right: 5vw;
+        }
+      }
+      .article-image {
+        order: -1;
+      }
+    }
+  }
+
+  // bg-colors needs to have a even number of colors for this to work. 
+  // todo: make it works with odd list
+  @for $i from 1 through length($bg-colors) {
+    article:nth-child(#{length($bg-colors)}n+#{$i}) {
+      background: nth($bg-colors, $i);
+
+      @if $i % 2 == 0 {
+        &:before {
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E");
+        }
+      } @else {
+        &:before {
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E")
+        }
       }
     }
   }
