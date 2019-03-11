@@ -18,7 +18,7 @@
 /// @return {*} - Desired value
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-      $map: map-get($map, $key);
+    $map: map-get($map, $key);
   }
   @return $map;
 }
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to top, $bg-gradient-1 , $bg-gradient-2),
+  background-image: linear-gradient(to top, $bg-gradient-1, $bg-gradient-2),
     url('images/background.jpg');
   background-size: auto, cover;
   background-attachment: fixed;
@@ -52,7 +52,7 @@ a {
   color: inherit;
   outline: 0;
   text-decoration: none;
-  transition: color .2s;
+  transition: color 0.2s;
 
   &:hover {
     color: $hover-color;
@@ -65,12 +65,27 @@ a {
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 10;
-  font-size: map-deep-get($sizes, 'largest', 'fs-scroll');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    font-size: map-deep-get($sizes, 'largest', 'fs-normal');
+  }
+
+  i {
+    padding-top: 1vh;
+    font-size: map-deep-get($sizes, 'largest', 'fs-scroll');
+  }
 }
 
 // header
 header {
-  width: 100vw;
+  width: 100%;
   height: 95vh;
   display: flex;
   flex-direction: column;
@@ -127,6 +142,18 @@ section {
         border-bottom: 2px solid $border-color;
         padding-bottom: map-deep-get($sizes, 'largest', 'title-sep');
         margin-bottom: map-deep-get($sizes, 'largest', 'title-sep');
+
+        span {
+          float: left;
+          padding-right: 0.5vw;
+
+          i {
+            padding-right: 0.5vw;
+            font-size: calc(
+              #{map-deep-get($sizes, 'largest', 'fs-title')} * 0.8
+            );
+          }
+        }
       }
 
       p {
@@ -138,7 +165,6 @@ section {
         text-transform: uppercase;
         font-weight: $fw-bold;
         letter-spacing: 0.1vw;
-        
 
         i {
           padding-right: 0.5vw;
@@ -164,6 +190,12 @@ section {
     &:nth-child(odd) {
       .article-content {
         text-align: left;
+
+        h3 span {
+          float: right;
+          padding-left: 0.5vw;
+        }
+
         & + .article-image {
           margin-left: 0;
           margin-right: 5vw;
@@ -175,21 +207,23 @@ section {
     }
   }
 
-  // bg-colors needs to have a even number of colors for this to work. 
+  // bg-colors needs to have a even number of colors for this to work.
   // todo: make it works with odd list
   @for $i from 1 through length($bg-colors) {
-    article:nth-child(#{length($bg-colors)}n+#{$i}) {
+    article:nth-child(#{length($bg-colors)}n + #{$i}) {
       background: nth($bg-colors, $i);
 
       @if $i % 2 == 0 {
         &:before {
-          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i),
+            0 1px 0 0 nth($bg-colors, $i);
           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E");
         }
       } @else {
         &:before {
-          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i), 0 1px 0 0 nth($bg-colors, $i);
-          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E")
+          box-shadow: inset 0 -1px 0 0 nth($bg-colors, $i),
+            0 1px 0 0 nth($bg-colors, $i);
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='#{url-friendly-color(nth($bg-colors, $i))}' /%3E%3C/svg%3E");
         }
       }
     }
@@ -197,12 +231,26 @@ section {
 }
 
 // breakpoints
-@include breakpoints((
-  large:      ( 1281px,  1680px ),
-  normal:    ( 737px,   1280px ),
-  tablet:    ( 481px,   736px  ),
-  mobile:   ( null,    480px  )
-));
+@include breakpoints(
+  (
+    large: (
+      1281px,
+      1680px
+    ),
+    normal: (
+      737px,
+      1280px
+    ),
+    tablet: (
+      481px,
+      736px
+    ),
+    mobile: (
+      null,
+      480px
+    )
+  )
+);
 
 @each $name, $size in $breakpoints {
   @include breakpoint('<=#{$name}') {
@@ -211,45 +259,56 @@ section {
     }
 
     #scrolldown {
-      font-size: map-deep-get($sizes, '#{$name}', 'fs-scroll');
+      span {
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-normal');
+      }
+      i {
+        font-size: map-deep-get($sizes, '#{$name}', 'fs-scroll');
+      }
     }
-  
+
     header {
       h1 {
         font-size: map-deep-get($sizes, '#{$name}', 'fs-big');
       }
-  
+
       #socials {
         margin: map-deep-get($sizes, '#{$name}', 'socials-margin');
         font-size: map-deep-get($sizes, '#{$name}', 'fs-icons');
       }
     }
-  
+
     section {
       article {
         padding: map-deep-get($sizes, '#{$name}', 'a-padding');
-  
+
         &:before {
           height: map-deep-get($sizes, '#{$name}', 'a-sep');
           top: -#{map-deep-get($sizes, '#{$name}', 'a-sep')};
         }
-  
+
         &:last-child {
           padding-bottom: map-deep-get($sizes, '#{$name}', 'a-sep');
         }
-  
+
         .article-content {
           h3 {
             font-size: map-deep-get($sizes, '#{$name}', 'fs-title');
             padding-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
             margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
+
+            span i {
+              font-size: calc(
+                #{map-deep-get($sizes, '#{$name}', 'fs-title')} * 0.8
+              );
+            }
           }
-  
+
           p {
             margin-bottom: map-deep-get($sizes, '#{$name}', 'title-sep');
           }
         }
-  
+
         .article-image {
           width: map-deep-get($sizes, '#{$name}', 'image-width');
           height: map-deep-get($sizes, '#{$name}', 'image-height');
@@ -264,4 +323,3 @@ section {
     display: none;
   }
 }
-
