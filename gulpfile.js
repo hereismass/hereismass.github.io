@@ -7,6 +7,8 @@ const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 const plumber = require("gulp-plumber");
 const sass = require("gulp-sass");
+const autoprefixer = require('gulp-autoprefixer');
+
 
 
 // Clean assets
@@ -43,6 +45,10 @@ function css() {
     .src("./src/scss/main.scss")
     .pipe(plumber())
     .pipe(sass({ outputStyle: "expanded" }))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest("./dist/"));
 }
 

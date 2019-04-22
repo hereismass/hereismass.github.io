@@ -4,7 +4,8 @@
   "description": "hereismass website",
   "main": "index.js",
   "scripts": {
-    "publish": "./scripts/publish.sh"
+    "publish": "./scripts/publish.sh",
+    "start": "./scripts/development.sh"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,12 @@
     "del": "^4.0.0",
     "gh-pages": "^2.0.1",
     "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^4.0.2",
+    "http-server": "^0.11.1",
     "node-sass": "^4.11.0"
   }
 }

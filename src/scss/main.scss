@@ -36,12 +36,6 @@ html {
 }
 
 body {
-  background-image: linear-gradient(to top, $bg-gradient-1, $bg-gradient-2),
-    url('images/background.jpg');
-  background-size: auto, cover;
-  background-attachment: fixed;
-  background-position: center;
-
   color: $text-color;
   font-family: 'Raleway', sans-serif;
   font-weight: $fw-normal;
@@ -91,6 +85,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background: linear-gradient(to top, $bg-gradient-1, $bg-gradient-2),
+    url('images/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 
   h1 {
     font-weight: $fw-bold;
