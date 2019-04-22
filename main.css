@@ -128,6 +128,7 @@ table {
 }
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -135,14 +136,11 @@ html {
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 body {
-  background-image: linear-gradient(to top, rgba(0, 56, 64, 0.9), rgba(0, 0, 0, 0.7)), url("images/background.jpg");
-  background-size: auto, cover;
-  background-attachment: fixed;
-  background-position: center;
   color: #fff;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -153,6 +151,7 @@ a {
   color: inherit;
   outline: 0;
   text-decoration: none;
+  -webkit-transition: color 0.2s;
   transition: color 0.2s;
 }
 
@@ -164,11 +163,21 @@ a:hover {
   position: absolute;
   bottom: 5vh;
   left: 50%;
+  -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -187,10 +196,24 @@ a:hover {
 header {
   width: 100%;
   height: 95vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 56, 64, 0.9)), to(rgba(0, 0, 0, 0.7))), url("images/background.jpg");
+  background: linear-gradient(to top, rgba(0, 56, 64, 0.9), rgba(0, 0, 0, 0.7)), url("images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 header h1 {
@@ -209,7 +232,11 @@ header #socials a {
 
 section article {
   padding: 5vw 15vw 10vw 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
 }
@@ -275,6 +302,7 @@ section article .article-content + .article-image {
 }
 
 section article .article-image {
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 15vw;
   height: 15vw;
@@ -301,6 +329,8 @@ section article:nth-child(odd) .article-content + .article-image {
 }
 
 section article:nth-child(odd) .article-image {
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
   order: -1;
 }
 
@@ -309,6 +339,7 @@ section article:nth-child(4n + 1) {
 }
 
 section article:nth-child(4n + 1):before {
+  -webkit-box-shadow: inset 0 -1px 0 0 #003840, 0 1px 0 0 #003840;
   box-shadow: inset 0 -1px 0 0 #003840, 0 1px 0 0 #003840;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='%23003840' /%3E%3C/svg%3E");
 }
@@ -318,6 +349,7 @@ section article:nth-child(4n + 2) {
 }
 
 section article:nth-child(4n + 2):before {
+  -webkit-box-shadow: inset 0 -1px 0 0 #005A5B, 0 1px 0 0 #005A5B;
   box-shadow: inset 0 -1px 0 0 #005A5B, 0 1px 0 0 #005A5B;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' fill='%23005A5B' /%3E%3C/svg%3E");
 }
@@ -327,6 +359,7 @@ section article:nth-child(4n + 3) {
 }
 
 section article:nth-child(4n + 3):before {
+  -webkit-box-shadow: inset 0 -1px 0 0 #007369, 0 1px 0 0 #007369;
   box-shadow: inset 0 -1px 0 0 #007369, 0 1px 0 0 #007369;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,0 0,100 100,100' fill='%23007369' /%3E%3C/svg%3E");
 }
@@ -336,6 +369,7 @@ section article:nth-child(4n + 4) {
 }
 
 section article:nth-child(4n + 4):before {
+  -webkit-box-shadow: inset 0 -1px 0 0 #008C72, 0 1px 0 0 #008C72;
   box-shadow: inset 0 -1px 0 0 #008C72, 0 1px 0 0 #008C72;
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' fill='%23008C72' /%3E%3C/svg%3E");
 }
