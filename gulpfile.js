@@ -55,8 +55,15 @@ function css() {
 // HTML 
 function html() {
   return gulp
-  .src("./src/index.html")
-  .pipe(gulp.dest("./dist/"));
+    .src("./src/index.html")
+    .pipe(gulp.dest("./dist/"));
+}
+
+// CNAME
+function cname() {
+  return gulp
+    .src("./CNAME")
+    .pipe(gulp.dest("./dist/"));
 }
 
 // Watch files
@@ -67,7 +74,7 @@ function watchFiles() {
 }
 
 // define complex tasks
-const build = gulp.series(clean, gulp.parallel(css, images, html));
+const build = gulp.series(clean, gulp.parallel(css, images, html, cname));
 
 // export tasks
 exports.images = images;
