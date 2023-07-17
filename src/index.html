@@ -24,23 +24,33 @@
     />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F2JGLJ1C4C"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-F2JGLJ1C4C"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-F2JGLJ1C4C');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-F2JGLJ1C4C");
     </script>
     <!-- Hotjar Tracking Code for hereismass.dev -->
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:2664941,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2664941, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
   </head>
   <body>
@@ -49,45 +59,67 @@
     ></a>
     <header>
       <h1>Massimo Zambelli</h1>
-      <div id="socials">
-        <a href="https://twitter.com/hereismass"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a href="https://github.com/hereismass"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/hereismass/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
-      </div>
-      <p>Developer.</p>
+      <p>Engineer, Musician.</p>
+      <p>
+        I currently work for <a href="https://hotjar.com">Hotjar</a> as an
+        Engineering Lead.
+      </p>
+      <p>
+        You can <a href="mailto:me@hereismass.dev">hire me</a> for freelance
+        consulting.
+      </p>
+      <p></p>
     </header>
 
-    <section id="content">
+    <section id="engineering">
+      <header>
+        <h2>Engineering</h2>
+        <div class="socials">
+          <a href="https://github.com/hereismass"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/hereismass/"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="mailto:me@hereismass.dev"><i class="fas fa-envelope"></i></a>
+        </div>
+      </header>
       <article>
         <div class="article-content">
           <h3>
-            <span><i class="fas fa-calendar-alt"></i>2020</span>Born Again - Massimo Zambelli
+            <span><i class="fas fa-gamepad"></i>Game</span>Idle Miner
           </h3>
-          <p>
-            Started making some music by myself. First title, sounds like synthwave.
-          </p>
-          <a href="https://soundcloud.com/hereismass/born-again"
-            ><i class="fas fa-chevron-right"></i>Listen on Soundcloud</a
+          <p>Browser idle game</p>
+          <a href="https://hereismass.dev/clicker"
+            ><i class="fas fa-chevron-right"></i>Idle Miner</a
           >
         </div>
+        <div class="article-image">
+          <img src="images/hotjar.jpg" />
+        </div>
       </article>
+    </section>
+    <section id="music">
+      <header>
+        <h2>Music</h2>
+        <div class="socials">
+          <a href="https://soundcloud.com/hereismass"
+            ><i class="fab fa-soundcloud"></i
+          ></a>
+          <a href="https://open.spotify.com/user/burningbox?si=d7173cf712ea4035"
+            ><i class="fab fa-spotify"></i
+          ></a>
+        </div>
+      </header>
       <article>
         <div class="article-content">
           <h3>
-            <span><i class="fas fa-calendar-alt"></i>2020</span>Hotjar - Senior Engineer 
+            <span><i class="fas fa-compact-disc"></i>Album</span>
+            Freak Show - Beasts
           </h3>
-          <p>
-            I worked on a product team handling recordings of user sessions on the web. AngularJS and React.
-            Working now in a team implementing a Design System from scratch. React, styled-components.
-          </p>
-          <a href="https://hotjar.com"
-            ><i class="fas fa-chevron-right"></i>Hotjar website</a
+          <a
+            href="https://open.spotify.com/album/1wxADFUv6xSjfdvs8LZp2D?si=gBM2f3kLQ9qZjJrTghtzAw"
+            ><i class="fas fa-chevron-right"></i>Listen on Spotify</a
           >
         </div>
         <div class="article-image">
@@ -97,147 +129,58 @@
       <article>
         <div class="article-content">
           <h3>
-            <span><i class="fas fa-calendar-alt"></i>2019</span>Pull requests
-            dashboard
+            <span><i class="fas fa-compact-disc"></i>EP</span>
+            Beasts - Beasts
           </h3>
-          <p>
-            Simple dashboard to follow open pull requests on specific
-            repositories within an organisation. Made to use on big screens.
-          </p>
-          <a href="https://github.com/hereismass/pr-dashboard"
-            ><i class="fas fa-chevron-right"></i>See on Github</a
-          >
-        </div>
-      </article>
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2018</span>Shape - Burning
-            Box
-          </h3>
-          <p>
-            EP composed and registered with Burning Box. Pop-Rock whatever style
-            you think it is.
-          </p>
           <a
-            href="https://open.spotify.com/artist/26w9mE4e6KDxdHjfPKSzlv?si=BAqrcVGwRnyF6XWazdbFbg"
-            ><i class="fas fa-chevron-right"></i>Burning Box on Spotify</a
+            href="https://open.spotify.com/album/6qyYnO4LoPmT4bpTz9dcUj?si=soGXQQM_QVaZA14dLGaNZw"
+            ><i class="fas fa-chevron-right"></i>Listen on Spotify</a
           >
         </div>
         <div class="article-image">
-          <img src="images/shaped.jpg" />
+          <img src="images/hotjar.jpg" />
         </div>
       </article>
+      <article>
+        <div class="article-content">
+          <h3>
+            <span><i class="fas fa-compact-disc"></i>EP</span>
+            Shaped - Burning Box
+          </h3>
+          <a
+            href="https://open.spotify.com/album/3Wpd1qXlnwXqntUNt2rQaq?si=sOpdR7HLQBiA6lQ4vP6SUA"
+            ><i class="fas fa-chevron-right"></i>Listen on Spotify</a
+          >
+        </div>
+        <div class="article-image">
+          <img src="images/hotjar.jpg" />
+        </div>
+      </article>
+      <article>
+        <div class="article-content">
+          <h3>
+            <span><i class="fas fa-music"></i>Song</span>>Born Again - Massimo
+            Zambelli
+          </h3>
 
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2017</span>Aircall -
-            Frontend Developer
-          </h3>
-          <p>
-            I worked on integrations with third parties and partners. Multiple
-            stacks and products like Zendesk apps, Chrome extension, open source
-            libraries, Intercom widget, and the Aircall main apps. AngularJS,
-            Vanilla JS, React. Tech lead of the squad.
-          </p>
-          <a href="https://aircall.io/"
-            ><i class="fas fa-chevron-right"></i>Aircall website</a
+          <a href="https://soundcloud.com/hereismass/born-again"
+            ><i class="fas fa-chevron-right"></i>Listen on Soundcloud</a
           >
-        </div>
-        <div class="article-image">
-          <img src="images/aircall.png" />
-        </div>
-      </article>
-
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2016</span>Uptilab -
-            Frontend Developer
-          </h3>
-          <p>
-            I worked on a SaaS product using Ember.js. Worked on defining and
-            implementing a design system and a CSS framework.
-          </p>
-          <a href="https://www.uptilab.com/"
-            ><i class="fas fa-chevron-right"></i>Uptilab Website</a
-          >
-        </div>
-        <div class="article-image">
-          <img src="images/uptilab.png" />
-        </div>
-      </article>
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2014</span>Lima - Developer
-          </h3>
-          <p>
-            I worked on the desktop application using a web stack and Vanilla JS
-            on top of a Qt layer to interact with the OS.
-          </p>
-          <a href="https://meetlima.com/"
-            ><i class="fas fa-chevron-right"></i>Lima Website</a
-          >
-        </div>
-        <div class="article-image">
-          <img src="images/lima.png" />
-        </div>
-      </article>
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2013</span>Star Wars Lego
-            Timelapse
-          </h3>
-          <p>
-            Timelapse video of building the Lego Super Star Destroyer.
-          </p>
-          <a href="https://youtu.be/_t9scib_cdE"
-            ><i class="fas fa-chevron-right"></i>Watch on Youtube</a
-          >
-        </div>
-        <div class="article-image">
-          <img src="images/destroyer.jpg" />
-        </div>
-      </article>
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2011</span>Master's Degree
-          </h3>
-          <p>
-            Software Engineer specialized in UX/Multimedia/Interactive design.
-          </p>
-          <a href="http://en.ece.fr/school-of-engineering/"
-            ><i class="fas fa-chevron-right"></i>ECE Website</a
-          >
-        </div>
-      </article>
-      <article>
-        <div class="article-content">
-          <h3>
-            <span><i class="fas fa-calendar-alt"></i>2010</span>Burning Box Live
-            Batofar
-          </h3>
-          <p>
-            First filmed concert. Beware of the quality of the performance...
-          </p>
-          <a href="https://youtu.be/zgvozosV1Ho"
-            ><i class="fas fa-chevron-right"></i>Watch on Youtube</a
-          >
-        </div>
-        <div class="article-image">
-          <img src="images/batofar.jpg" />
         </div>
       </article>
     </section>
     <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
       })(window, document, "clarity", "script", "4v0169usqv");
     </script>
   </body>
