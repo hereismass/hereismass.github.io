@@ -4,7 +4,8 @@
   "description": "hereismass website",
   "main": "index.js",
   "scripts": {
-    "start": "./scripts/development.sh"
+    "start": "./scripts/development.sh",
+    "build": "./scripts/production.sh"
   },
   "repository": {
     "type": "git",
@@ -17,14 +18,15 @@
   },
   "homepage": "https://github.com/hereismass/hereismass.github.io#readme",
   "devDependencies": {
-    "del": "^4.1.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-newer": "^1.4.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^4.1.0",
-    "http-server": "^0.12.3",
-    "node-sass": "^4.14.1"
+    "del": "7.0.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "8.0.0",
+    "gulp-imagemin": "8.0.0",
+    "gulp-newer": "1.4.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-sass": "5.1.0",
+    "http-server": "14.1.1",
+    "node-sass": "9.0.0",
+    "sass": "1.63.6"
   }
 }
