@@ -2,17 +2,14 @@
 
 $sizes: (
   largest: (
-    fs-big: 4vw,
-    fs-title: 2vw,
-    fs-normal: 1.5vw,
-    fs-icons: 3vw,
-    fs-scroll: 2vw,
-    socials-margin: 2vw,
-    a-padding: 5vw 15vw 10vw 15vw,
-    a-sep: 5vw,
-    title-sep: 2vw,
-    image-width: 15vw,
-    image-height: 15vw
+    content-width: 1280px,
+    header-padding: 120px,
+    fs-big: 80px,
+    fs-normal: 30px,
+    fs-icons: 50px,
+    socials-padding: 50px,
+    image-width: 520px,
+    image-height: 520px
   ),
   large: (
     fs-big: 4vw,
@@ -75,8 +72,8 @@ $fw-bold: 700;
 
 
 // colors
-$text-color: #fff;
-$hover-color: #aaa;
+$text-color: #fcfcfc;
+$hover-color: #72b3ab;
 
 $bg-gradient-1: rgba(0, 56, 64, 0.90);
 $bg-gradient-2: rgba(0, 0, 0, 0.7);
