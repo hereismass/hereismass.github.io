@@ -2,84 +2,114 @@
 
 $sizes: (
   largest: (
-    content-width: 1280px,
-    header-padding: 120px,
+    content-width: 1380px,
+    content-gap: 100px,
     fs-big: 80px,
     fs-normal: 30px,
-    fs-icons: 50px,
-    socials-padding: 50px,
-    image-width: 520px,
-    image-height: 520px
+    fs-icons: 60px,
+    title-margin: 20px,
+    socials-margin: 30px,
+    socials-gap: 50px,
+    hr-width: 100px,
+    hr-margin: 40px,
+    projects-gap: 30px,
+    projects-padding: 20px,
+    links-gap: 20px,
+    links-margin: 15px,
+    projects-height: 80px,
+    image-width: 480px,
+    image-height: 720px,
   ),
   large: (
-    fs-big: 4vw,
-    fs-title: 2vw,
-    fs-normal: 1.5vw,
-    fs-icons: 3vw,
-    fs-scroll: 2vw,
-    socials-margin: 2vw,
-    a-padding: 5vw 15vw 10vw 15vw,
-    a-sep: 5vw,
-    title-sep: 2vw,
-    image-width: 15vw,
-    image-height: 15vw
+    content-width: 1100px,
+    content-gap: 50px,
+    fs-big: 65px,
+    fs-normal: 24px,
+    fs-icons: 50px,
+    title-margin: 20px,
+    socials-margin: 30px,
+    socials-gap: 50px,
+    hr-width: 100px,
+    hr-margin: 40px,
+    projects-gap: 30px,
+    projects-padding: 20px,
+    links-gap: 20px,
+    links-margin: 15px,
+    projects-height: 80px,
+    image-width: 480px,
+    image-height: 720px,
   ),
-  normal:(
-    fs-big: 6vw,
-    fs-title: 3vw,
-    fs-normal: 2vw,
-    fs-icons: 4vw,
-    fs-scroll: 3vw,
+  normal: (
+    content-width: 85vw,
+    content-gap: 3vw,
+    fs-big: 4.5vw,
+    fs-normal: 1.8vw,
+    fs-icons: 3.6vw,
+    title-margin: 1.5vw,
     socials-margin: 2vw,
-    a-padding: 5vw 10vw 10vw 10vw,
-    a-sep: 5vw,
-    title-sep: 3vw,
-    image-width: 20vw,
-    image-height: 20vw
+    socials-gap: 4vw,
+    hr-width: 100px,
+    hr-margin: 5vw,
+    projects-gap: 2vw,
+    projects-padding: 2vw,
+    links-gap: 2vw,
+    links-margin: 1.5vw,
+    projects-height: 5vw,
+    image-width: 36vw,
+    image-height: 52vw,
   ),
-  tablet:(
-    fs-big: 7vw,
-    fs-title: 3vw,
-    fs-normal: 2vw,
+  tablet: (
+    content-width: calc(100% - 30px),
+    content-gap: 5vw,
+    fs-big: 9vw,
+    fs-normal: 4vw,
     fs-icons: 5vw,
-    fs-scroll: 4vw,
-    socials-margin: 5vw,
-    a-padding: 5vw 10vw 10vw 10vw,
-    a-sep: 5vw,
-    title-sep: 3vw,
-    image-width: 20vw,
-    image-height: 20vw
+    title-margin: 1.5vw,
+    socials-margin: 2vw,
+    socials-gap: 4vw,
+    hr-width: 100px,
+    hr-margin: 5vw,
+    projects-gap: 3vw,
+    projects-padding: 2vw,
+    links-gap: 2vw,
+    links-margin: 1.5vw,
+    projects-height: 10vw,
+    image-width: 100%,
+    image-height: auto,
   ),
   mobile: (
-    fs-big: 8vw,
-    fs-title: 5vw,
+    content-width: calc(100% - 30px),
+    content-gap: 5vw,
+    fs-big: 9vw,
     fs-normal: 4vw,
-    fs-icons: 8vw,
-    fs-scroll: 8vw,
-    socials-margin: 10vw,
-    a-padding: 10vw 5vw 15vw 5vw,
-    a-sep: 8vw,
-    title-sep: 3vw,
-    image-width: 20vw,
-    image-height: 20vw
-  )
+    fs-icons: 5vw,
+    title-margin: 1.5vw,
+    socials-margin: 2vw,
+    socials-gap: 4vw,
+    hr-width: 100px,
+    hr-margin: 5vw,
+    projects-gap: 3vw,
+    projects-padding: 2vw,
+    links-gap: 2vw,
+    links-margin: 1.5vw,
+    projects-height: 10vw,
+    image-width: 100%,
+    image-height: auto,
+  ),
 );
-
 
 $fw-light: 300;
 $fw-normal: 400;
 $fw-bold: 700;
 
-
 // colors
 $text-color: #fcfcfc;
 $hover-color: #72b3ab;
 
-$bg-gradient-1: rgba(0, 56, 64, 0.90);
+$bg-gradient-1: rgba(0, 56, 64, 0.9);
 $bg-gradient-2: rgba(0, 0, 0, 0.7);
 
 $border-color: rgba(255, 255, 255, 0.2);
 
-
 // articles background colors
-$bg-colors: #003840, #005A5B, #007369, #008C72;
+$bg-colors: #003840, #005a5b, #007369, #008c72;

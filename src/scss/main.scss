@@ -1,13 +1,13 @@
-@import 'reset';
-@import 'variables';
-@import 'breakpoints';
+@import "reset";
+@import "variables";
+@import "breakpoints";
 
 // fonts
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700");
 
 // functions
 @function url-friendly-color($color) {
-  @return '%23' + str-slice('#{$color}', 2, -1);
+  @return "%23" + str-slice("#{$color}", 2, -1);
 }
 
 /// Map deep get
@@ -35,9 +35,9 @@ html {
 
 body {
   color: $text-color;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: $fw-normal;
-  font-size: map-deep-get($sizes, 'largest', 'fs-normal');
+  font-size: map-deep-get($sizes, "largest", "fs-normal");
   background: linear-gradient(to top, $bg-gradient-1, $bg-gradient-2);
   background-size: cover;
   background-attachment: fixed;
@@ -46,7 +46,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 
 a {
@@ -61,125 +60,186 @@ a {
 }
 
 section {
-  width: map-deep-get($sizes, 'largest', 'content-width');
+  width: map-deep-get($sizes, "largest", "content-width");
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: map-deep-get($sizes, "largest", "content-gap");
 }
 
 #presentation {
   text-align: right;
   h1 {
     font-weight: $fw-bold;
-    font-size: map-deep-get($sizes, 'largest', 'fs-big');
-    line-height: 2;
+    font-size: map-deep-get($sizes, "largest", "fs-big");
+    margin-bottom: map-deep-get($sizes, "largest", "title-margin");
   }
   > p {
     line-height: 2;
     > a {
       color: $hover-color;
-  
       &:hover {
         color: $text-color;
       }
     }
   }
 
-  
-
-
   #socials {
-    padding: map-deep-get($sizes, 'largest', 'socials-padding') 0;
+    margin-top: map-deep-get($sizes, "largest", "socials-margin");
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: map-deep-get($sizes, 'largest', 'socials-padding');
+    gap: map-deep-get($sizes, "largest", "socials-gap");
     a {
-      font-size: map-deep-get($sizes, 'largest', 'fs-icons');
-
+      font-size: map-deep-get($sizes, "largest", "fs-icons");
     }
   }
 }
 
 hr {
-  border: 1px solid white;
-  width: 100px;
+  border: 1px solid $text-color;
+  width: map-deep-get($sizes, "largest", "hr-width");
   border-top: none;
+  margin: map-deep-get($sizes, "largest", "hr-margin") auto;
 }
 
 #projects {
+  display: flex;
+  flex-direction: column;
+  gap: map-deep-get($sizes, "largest", "projects-gap");
   article {
-    margin: 50px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: rgba(255,255,255, 0.1);
+    padding: map-deep-get($sizes, "largest", "projects-padding");
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
   }
   .links {
-    margin-top: 15px;
+    margin-top: map-deep-get($sizes, "largest", "links-margin");
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 20px;
+    gap: map-deep-get($sizes, "largest", "links-gap");
   }
   img {
-    border-radius: 50%;
     overflow: hidden;
-    width: 100px;
-    height:100px;
+    height: map-deep-get($sizes, "largest", "projects-height");
   }
-
 }
 
 #headshot {
   flex-shrink: 0;
-  width: map-deep-get($sizes, 'largest', 'image-width');
-  height: map-deep-get($sizes, 'largest', 'image-height');
+  width: map-deep-get($sizes, "largest", "image-width");
+  height: map-deep-get($sizes, "largest", "image-height");
+  overflow: hidden;
+  position: relative;
   img {
-    border-radius: 50%;
     overflow: hidden;
     width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
-
 
 // breakpoints
 @include breakpoints(
   (
     large: (
       1281px,
-      1680px
+      1680px,
     ),
     normal: (
       737px,
-      1280px
+      1280px,
     ),
     tablet: (
       481px,
-      736px
+      736px,
     ),
     mobile: (
       null,
-      480px
-    )
+      480px,
+    ),
   )
 );
 
 @each $name, $size in $breakpoints {
-  @include breakpoint('<=#{$name}') {
+  @include breakpoint("<=#{$name}") {
     body {
-      font-size: map-deep-get($sizes, '#{$name}', 'fs-normal');
+      font-size: map-deep-get($sizes, "#{$name}", "fs-normal");
+    }
+
+    section {
+      width: map-deep-get($sizes, "#{$name}", "content-width");
+      gap: map-deep-get($sizes, "#{$name}", "content-gap");
+    }
+
+    #presentation {
+      h1 {
+        font-size: map-deep-get($sizes, "#{$name}", "fs-big");
+        margin-bottom: map-deep-get($sizes, "#{$name}", "title-margin");
+      }
+
+      #socials {
+        margin-top: map-deep-get($sizes, "#{$name}", "socials-margin");
+        gap: map-deep-get($sizes, "#{$name}", "socials-gap");
+        a {
+          font-size: map-deep-get($sizes, "#{$name}", "fs-icons");
+        }
+      }
+    }
+
+    hr {
+      width: map-deep-get($sizes, "#{$name}", "hr-width");
+      margin: map-deep-get($sizes, "#{$name}", "hr-margin") auto;
+    }
+
+    #projects {
+      gap: map-deep-get($sizes, "#{$name}", "projects-gap");
+      article {
+        padding: map-deep-get($sizes, "#{$name}", "projects-padding");
+      }
+      .links {
+        margin-top: map-deep-get($sizes, "#{$name}", "links-margin");
+
+        gap: map-deep-get($sizes, "#{$name}", "links-gap");
+      }
+      img {
+        height: map-deep-get($sizes, "#{$name}", "projects-height");
+      }
+    }
+
+    #headshot {
+      width: map-deep-get($sizes, "#{$name}", "image-width");
+      height: map-deep-get($sizes, "#{$name}", "image-height");
     }
   }
 }
 
-@include breakpoint('<=mobile') {
-  section article .article-image {
-    display: none;
+@include breakpoint("<=tablet") {
+  section {
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 30px);
+  }
+
+  #presentation {
+    text-align: center;
+    width: 100%;
+
+    #socials {
+      justify-content: center;
+    }
+  }
+
+  #headshot {
+    order: -1;
+    flex-grow: 1;
   }
 }
